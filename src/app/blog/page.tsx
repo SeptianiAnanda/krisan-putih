@@ -45,7 +45,7 @@ export default async function BlogPage() {
               <article key={post._id} className="group">
                 <Link href={`/blog/${post.slug.current}`} className="block">
                   <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-gray-100 mb-6">
-                    {post.mainImage && (
+                    {post.mainImage ? (
                       <Image
                         src={urlFor(post.mainImage as Parameters<typeof urlFor>[0]).width(800).height(450).url()}
                         alt={post.title}
@@ -53,7 +53,7 @@ export default async function BlogPage() {
                         height={450}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                    )}
+                    ) : null}
                   </div>
                   <time className="text-sm text-text/60">
                     {new Date(post.publishedAt).toLocaleDateString("id-ID", {

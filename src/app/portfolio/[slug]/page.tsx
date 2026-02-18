@@ -27,13 +27,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const components = {
     block: {
-      h2: ({ children }: { children: React.ReactNode }) => (
+      h2: ({ children }: { children?: React.ReactNode }) => (
         <h2 className="text-2xl font-bold text-secondary mt-10 mb-4">{children}</h2>
       ),
-      h3: ({ children }: { children: React.ReactNode }) => (
+      h3: ({ children }: { children?: React.ReactNode }) => (
         <h3 className="text-xl font-semibold text-secondary mt-8 mb-3">{children}</h3>
       ),
-      normal: ({ children }: { children: React.ReactNode }) => (
+      normal: ({ children }: { children?: React.ReactNode }) => (
         <p className="text-text leading-relaxed mb-4">{children}</p>
       ),
     },

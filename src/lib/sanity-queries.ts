@@ -8,21 +8,17 @@ export function urlFor(source: unknown) {
   if (!builder || !source) {
     // Return a mock builder if Sanity isn't configured
     const mockBuilder = {
-      width: (w: number) => ({
-        height: (h: number) => ({
-          url: () => "/placeholder.jpg",
-        }),
+      width: (_w: number) => ({
+        height: (_h: number) => ({ url: () => "/placeholder.jpg" }),
         url: () => "/placeholder.jpg",
       }),
-      height: (h: number) => ({
-        width: (w: number) => ({
-          url: () => "/placeholder.jpg",
-        }),
+      height: (_h: number) => ({
+        width: (_w: number) => ({ url: () => "/placeholder.jpg" }),
         url: () => "/placeholder.jpg",
       }),
       url: () => "/placeholder.jpg",
     };
-    return mockBuilder as ReturnType<typeof builder.image>;
+    return mockBuilder as { width: (w: number) => { height: (h: number) => { url: () => string }; url: () => string }; height: (h: number) => { width: (w: number) => { url: () => string }; url: () => string }; url: () => string };
   }
   return builder.image(source as Parameters<typeof builder.image>[0]);
 }

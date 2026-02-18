@@ -27,16 +27,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const components = {
     block: {
-      h2: ({ children }: { children: React.ReactNode }) => (
+      h2: ({ children }: { children?: React.ReactNode }) => (
         <h2 className="text-2xl font-bold text-secondary mt-10 mb-4">{children}</h2>
       ),
-      h3: ({ children }: { children: React.ReactNode }) => (
+      h3: ({ children }: { children?: React.ReactNode }) => (
         <h3 className="text-xl font-semibold text-secondary mt-8 mb-3">{children}</h3>
       ),
-      normal: ({ children }: { children: React.ReactNode }) => (
+      normal: ({ children }: { children?: React.ReactNode }) => (
         <p className="text-text leading-relaxed mb-4">{children}</p>
       ),
-      blockquote: ({ children }: { children: React.ReactNode }) => (
+      blockquote: ({ children }: { children?: React.ReactNode }) => (
         <blockquote className="border-l-4 border-primary pl-6 py-2 my-6 italic text-text/80">
           {children}
         </blockquote>
