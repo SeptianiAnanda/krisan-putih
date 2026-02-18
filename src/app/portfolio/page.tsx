@@ -8,6 +8,10 @@ export const metadata = {
   description: "Explore our web development and design projects.",
 };
 
+// Always fetch latest projects from Sanity (no cached empty list)
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function PortfolioPage() {
   let projects: Array<{
     _id: string;
