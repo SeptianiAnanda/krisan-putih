@@ -18,12 +18,16 @@ export interface InstagramMedia {
 const INSTAGRAM_API_BASE = "https://graph.instagram.com";
 const FIELDS = "id,caption,media_url,permalink,thumbnail_url,media_type,timestamp";
 
-export async function getLatestInstagramMedia(limit = 8): Promise<InstagramMedia[]> {
+export type InstagramFeedResult =
+  | { media: InstagramMedia[]; error?: undefined }
+  | { media: []; error: "missing_env" | "api_error" };
+
+export async function getLatestInstagramMedia(limit = 8): Promise<InstagramFeedResult> {
   const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN?.trim();
   const userId = process.env.INSTAGRAM_USER_ID?.trim();
 
   if (!accessToken || !userId) {
-    return [];
+    return { media: [], error: "missing_env" };
   }
 
   try {
@@ -31,17 +35,18 @@ export async function getLatestInstagramMedia(limit = 8): Promise<InstagramMedia
     const res = await fetch(url, {
       next: { revalidate: 3600 }, // refresh every hour so new posts appear
     });
+    const text = await res.text();
 
     if (!res.ok) {
-      console.warn("[Instagram] API error:", res.status, await res.text());
-      return [];
+      console.warn("[Instagram] API error:", res.status, text);
+      return { media: [], error: "api_error" };
     }
 
-    const data = (await res.json()) as { data?: InstagramMedia[] };
+    const data = (await (text ? JSON.parse(text) : {})) as { data?: InstagramMedia[] };
     const list = data.data ?? [];
-    return list.slice(0, limit);
+    return { media: list.slice(0, limit) };
   } catch (e) {
     console.warn("[Instagram] Fetch failed:", e);
-    return [];
+    return { media: [], error: "api_error" };
   }
 }

@@ -9,6 +9,7 @@ const INSTAGRAM_URL = "https://instagram.com/krisanputih";
 
 interface InstagramSectionProps {
   media: InstagramMedia[];
+  error?: "missing_env" | "api_error";
 }
 
 export default function InstagramSection({ media }: InstagramSectionProps) {

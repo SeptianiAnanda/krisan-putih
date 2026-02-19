@@ -19,7 +19,7 @@ export default async function HomePage() {
     // Sanity not configured yet - show empty
   }
 
-  const instagramMedia = await getLatestInstagramMedia(8);
+  const instagramResult = await getLatestInstagramMedia(8);
 
   return (
     <>
@@ -28,7 +28,7 @@ export default async function HomePage() {
       <AboutSection />
       <ServicesListSection />
       <LatestBlogSection posts={posts as Parameters<typeof LatestBlogSection>[0]["posts"]} />
-      <InstagramSection media={instagramMedia} />
+      <InstagramSection media={instagramResult.media} error={instagramResult.error} />
       <CTASection />
     </>
   );
