@@ -7,16 +7,6 @@ const nextConfig = {
         hostname: 'cdn.sanity.io',
         pathname: '/images/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'scontent.cdninstagram.com',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'fbcdn.net',
-        pathname: '/**',
-      },
     ],
   },
 };
