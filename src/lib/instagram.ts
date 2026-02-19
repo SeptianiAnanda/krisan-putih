@@ -18,12 +18,18 @@ export interface InstagramMedia {
 const INSTAGRAM_API_BASE = "https://graph.instagram.com";
 const FIELDS = "id,caption,media_url,permalink,thumbnail_url,media_type,timestamp";
 
+/** Remove newlines/spaces that can be accidentally pasted in env (e.g. Vercel) */
+function normalizeToken(raw: string | undefined): string {
+  if (!raw) return "";
+  return raw.replace(/\s+/g, "").trim();
+}
+
 export type InstagramFeedResult =
   | { media: InstagramMedia[]; error?: undefined }
   | { media: []; error: "missing_env" | "api_error" };
 
 export async function getLatestInstagramMedia(limit = 8): Promise<InstagramFeedResult> {
-  const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN?.trim();
+  const accessToken = normalizeToken(process.env.INSTAGRAM_ACCESS_TOKEN);
   const userId = process.env.INSTAGRAM_USER_ID?.trim();
 
   if (!accessToken || !userId) {
@@ -31,8 +37,9 @@ export async function getLatestInstagramMedia(limit = 8): Promise<InstagramFeedR
   }
 
   try {
-    const url = `${INSTAGRAM_API_BASE}/${userId}/media?fields=${FIELDS}&limit=${Math.max(limit, 25)}&access_token=${encodeURIComponent(accessToken)}`;
+    const url = `${INSTAGRAM_API_BASE}/${userId}/media?fields=${FIELDS}&limit=${Math.max(limit, 25)}`;
     const res = await fetch(url, {
+      headers: { Authorization: `Bearer ${accessToken}` },
       next: { revalidate: 3600 }, // refresh every hour so new posts appear
     });
     const text = await res.text();
