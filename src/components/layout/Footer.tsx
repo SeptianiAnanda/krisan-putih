@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   services: [
-    { label: "Website Development", href: "/#services" },
+    { label: "Website Development", href: "/website-development" },
     { label: "Social Media Management", href: "/#services" },
     { label: "SEO Optimization", href: "/#services" },
     { label: "Ads Management", href: "/#services" },
@@ -22,8 +23,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <Link href="/" className="text-2xl font-semibold text-white hover:text-primary transition-colors">
-              Krisan Putih
+            <Link href="/" className="inline-block" aria-label="Krisan Putih - Home">
+              <Image
+                src="/logo.png"
+                alt="Krisan Putih"
+                width={320}
+                height={80}
+                className="h-16 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="mt-4 text-gray-400 text-sm max-w-xs">
               Digital web development agency helping businesses grow through strategic planning and digital transformation.
