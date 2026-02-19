@@ -37,9 +37,8 @@ export async function getLatestInstagramMedia(limit = 8): Promise<InstagramFeedR
   }
 
   try {
-    const url = `${INSTAGRAM_API_BASE}/${userId}/media?fields=${FIELDS}&limit=${Math.max(limit, 25)}`;
+    const url = `${INSTAGRAM_API_BASE}/${userId}/media?fields=${FIELDS}&limit=${Math.max(limit, 25)}&access_token=${encodeURIComponent(accessToken)}`;
     const res = await fetch(url, {
-      headers: { Authorization: `Bearer ${accessToken}` },
       next: { revalidate: 3600 }, // refresh every hour so new posts appear
     });
     const text = await res.text();

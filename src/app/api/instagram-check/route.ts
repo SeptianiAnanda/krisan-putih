@@ -35,12 +35,10 @@ export async function GET() {
     );
   }
 
-  const authHeader = { Authorization: `Bearer ${accessToken}` };
-
   try {
     // Step 1: Validate token with Facebook Graph (same token). If this fails with 190, token is corrupted in Vercel.
     const fbUrl = "https://graph.facebook.com/me?fields=id";
-    const fbRes = await fetch(fbUrl, { headers: authHeader });
+    const fbRes = await fetch(fbUrl, { headers: { Authorization: `Bearer ${accessToken}` } });
     const fbText = await fbRes.text();
 
     let facebookTokenValid = false;
@@ -68,9 +66,9 @@ export async function GET() {
       );
     }
 
-    // Step 2: Call Instagram API with INSTAGRAM_USER_ID (must be Instagram Business Account ID, not Page ID). Token in header to avoid URL encoding issues.
-    const igUrl = `https://graph.instagram.com/${userId}/media?fields=id&limit=1`;
-    const res = await fetch(igUrl, { headers: authHeader });
+    // Step 2: Instagram Graph API expects access_token in query. Encode so special chars (e.g. +) are not corrupted.
+    const igUrl = `https://graph.instagram.com/${userId}/media?fields=id&limit=1&access_token=${encodeURIComponent(accessToken)}`;
+    const res = await fetch(igUrl);
     const text = await res.text();
 
     if (!res.ok) {
