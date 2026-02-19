@@ -31,12 +31,6 @@ const ourWork = [
   { name: "AVRA Cleaning", slug: "avra-cleaning", category: "Web design & development" },
 ];
 
-const benefitIcons = [
-  { slug: "flexible", title: "Flexible Investment" },
-  { slug: "secure", title: "Secure Hiring Option" },
-  { slug: "client", title: "Client-First Focus" },
-];
-
 const testimonials = [
   {
     name: "Moses Mehraban",
@@ -241,20 +235,24 @@ export default function WebsiteDevelopmentPage() {
           </h2>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {trustedByLogos.map((logo, i) => (
-              <OptionalImage
+              <div
                 key={i}
-                src={logo.src}
-                alt={logo.label}
-                width={120}
-                height={60}
-                className="w-24 h-12 shrink-0"
-                imgClassName="w-full h-full object-contain"
-                placeholder={
-                  <div className="w-24 h-12 bg-gray-100 rounded flex items-center justify-center text-text/50 text-xs">
-                    {logo.label}
-                  </div>
-                }
-              />
+                className="shrink-0 w-[120px] h-12 flex items-center justify-center"
+              >
+                <OptionalImage
+                  src={logo.src}
+                  alt={logo.label}
+                  width={120}
+                  height={60}
+                  className="w-[120px] h-12 max-w-[120px]"
+                  imgClassName="w-full h-full object-contain"
+                  placeholder={
+                    <div className="w-full h-full min-w-0 bg-gray-100 rounded flex items-center justify-center text-text/50 text-xs truncate px-2">
+                      {logo.label}
+                    </div>
+                  }
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -422,19 +420,23 @@ export default function WebsiteDevelopmentPage() {
                 key={b.title}
                 className="p-8 rounded-2xl border border-gray-100 hover:border-primary/20 transition-colors text-center"
               >
-                <OptionalImage
-                  src={`/website-development/icons/icon-${benefitIcons[i].slug}.png`}
-                  alt={b.title}
-                  width={80}
-                  height={80}
-                  className="mx-auto mb-4 w-16 h-16"
-                  imgClassName="w-full h-full object-contain"
-                  placeholder={
-                    <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold">
-                      {i + 1}
-                    </div>
-                  }
-                />
+                <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center text-primary [&_svg]:w-full [&_svg]:h-full [&_svg]:max-w-14 [&_svg]:max-h-14">
+                  {i === 0 && (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M3 3v18h18" /><path d="M7 14l4-4 4 4 5-5" /><path d="M18 10V3" />
+                    </svg>
+                  )}
+                  {i === 1 && (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  )}
+                  {i === 2 && (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  )}
+                </div>
                 <h3 className="font-semibold text-secondary text-lg mb-3">
                   {b.title}
                 </h3>
