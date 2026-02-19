@@ -3,8 +3,10 @@ import ServicesSection from "@/components/home/ServicesSection";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesListSection from "@/components/home/ServicesListSection";
 import LatestBlogSection from "@/components/home/LatestBlogSection";
+import InstagramSection from "@/components/home/InstagramSection";
 import CTASection from "@/components/home/CTASection";
 import { getLatestPosts } from "@/lib/sanity-queries";
+import { getLatestInstagramMedia } from "@/lib/instagram";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -17,6 +19,8 @@ export default async function HomePage() {
     // Sanity not configured yet - show empty
   }
 
+  const instagramMedia = await getLatestInstagramMedia(8);
+
   return (
     <>
       <HeroSection />
@@ -24,6 +28,7 @@ export default async function HomePage() {
       <AboutSection />
       <ServicesListSection />
       <LatestBlogSection posts={posts as Parameters<typeof LatestBlogSection>[0]["posts"]} />
+      <InstagramSection media={instagramMedia} />
       <CTASection />
     </>
   );
