@@ -66,7 +66,7 @@ export default function Header() {
                       className="absolute top-full left-0 pt-2"
                     >
                       <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
-                        {item.submenu.map((sub) => (
+                        {(item.submenu ?? []).map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
@@ -128,7 +128,7 @@ export default function Header() {
                 "submenu" in item ? (
                   <div key={item.label} className="flex flex-col gap-2">
                     <span className="text-text font-medium text-sm">{item.label}</span>
-                    {item.submenu.map((sub) => (
+                    {(item.submenu ?? []).map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
