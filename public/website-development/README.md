@@ -29,7 +29,22 @@ You can use `.png`, `.jpg`, or `.webp`. If you use `.jpg`, name the file e.g. `f
 
 ---
 
-## 2. Our Work (project thumbnails)
+## 2. About Us section (right column image)
+
+**Folder:** `public/website-development/`
+
+**File name:** Use either:
+
+- `about-section.jpg`, or  
+- `about-section.webp`
+
+The page will try `.webp` first, then `.jpg`. Put **one** of these files directly in `public/website-development/` (no subfolder).
+
+**Suggested size:** about 600×450 px or similar (4:3 works well). The image is displayed in the right column of the About Us block.
+
+---
+
+## 3. Our Work (project thumbnails)
 
 **Folder:** `public/website-development/work/`
 
@@ -64,7 +79,7 @@ If images don’t show, open DevTools (F12) → Network tab, refresh, and check 
 
 ---
 
-## 3. Experienced Working with (benefit icons)
+## 4. Experienced Working with (benefit icons)
 
 **Folder:** `public/website-development/icons/`
 

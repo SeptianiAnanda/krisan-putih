@@ -48,8 +48,9 @@ Follow these steps to deploy your Krisan Putih website to Vercel and connect you
    | `NEXT_PUBLIC_SANITY_PROJECT_ID` | Your Sanity Project ID (e.g. `8ewqha4l`) |
    | `NEXT_PUBLIC_SANITY_DATASET` | `production` |
    | `NEXT_PUBLIC_SANITY_API_VERSION` | `2024-01-01` |
+   | `STUDIO_SECRET` | A strong password only you know (required to open `/studio` to add/edit content) |
 
-   Use the same values as in your `.env.local`.
+   Use the same values as in your `.env.local`. **STUDIO_SECRET**: choose a long random password and keep it private; only you will use it to access the CMS at `/studio`.
 3. For each variable, leave **Environment** as **Production** (and optionally add Preview/Development if you use them).
 4. Click **Deploy**.
 

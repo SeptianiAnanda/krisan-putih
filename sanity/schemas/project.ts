@@ -1,5 +1,24 @@
 import { defineField, defineType } from "sanity";
 
+const COUNTRY_OPTIONS = [
+  { title: "Indonesia", value: "indonesia" },
+  { title: "United States", value: "united-states" },
+  { title: "United Kingdom", value: "united-kingdom" },
+  { title: "Australia", value: "australia" },
+  { title: "Singapore", value: "singapore" },
+  { title: "Malaysia", value: "malaysia" },
+  { title: "New Zealand", value: "new-zealand" },
+  { title: "Canada", value: "canada" },
+  { title: "Germany", value: "germany" },
+  { title: "Netherlands", value: "netherlands" },
+  { title: "Japan", value: "japan" },
+  { title: "India", value: "india" },
+  { title: "Philippines", value: "philippines" },
+  { title: "Thailand", value: "thailand" },
+  { title: "Vietnam", value: "vietnam" },
+  { title: "Other", value: "other" },
+];
+
 export default defineType({
   name: "project",
   title: "Project",
@@ -28,12 +47,14 @@ export default defineType({
       name: "client",
       title: "Client",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "mainImage",
       title: "Main Image",
       type: "image",
       options: { hotspot: true },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "images",
@@ -54,11 +75,50 @@ export default defineType({
           { title: "SEO", value: "seo" },
         ],
       },
+      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: "completedAt",
-      title: "Completed At",
+      title: "Year",
       type: "date",
+      validation: (Rule) => Rule.required(),
+      options: {
+        dateFormat: "YYYY",
+      },
+    }),
+    defineField({
+      name: "country",
+      title: "Country",
+      type: "string",
+      options: {
+        list: COUNTRY_OPTIONS,
+        layout: "dropdown",
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "framework",
+      title: "Framework",
+      type: "string",
+      description: "e.g. Next.js, WordPress, React",
+    }),
+    defineField({
+      name: "projectResult",
+      title: "Project Result",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
+      name: "nameOfPIC",
+      title: "Name of PIC",
+      type: "string",
+      description: "Name of person in charge / point of contact",
+    }),
+    defineField({
+      name: "testimony",
+      title: "Testimony",
+      type: "text",
+      rows: 4,
     }),
     defineField({
       name: "link",
@@ -67,7 +127,7 @@ export default defineType({
     }),
     defineField({
       name: "body",
-      title: "Description",
+      title: "About Project",
       type: "blockContent",
     }),
   ],

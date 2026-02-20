@@ -25,7 +25,7 @@ export default function OptionalImage({
   height,
   className = "",
   placeholder,
-  imgClassName = "",
+  imgClassName = "object-cover",
 }: OptionalImageProps) {
   const srcs = Array.isArray(src) ? src : [src];
   const [tryIndex, setTryIndex] = useState(0);
@@ -50,7 +50,7 @@ export default function OptionalImage({
         key={currentSrc}
         src={currentSrc}
         alt={alt}
-        className={`absolute inset-0 h-full w-full object-cover ${imgClassName}`}
+        className={`absolute inset-0 h-full w-full ${imgClassName}`}
         onError={handleError}
       />
     </div>

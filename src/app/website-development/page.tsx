@@ -3,6 +3,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import OptionalImage from "@/components/website-development/OptionalImage";
 import InvestmentPackagesSection from "@/components/website-development/InvestmentPackagesSection";
+import TrustedByCarousel from "@/components/website-development/TrustedByCarousel";
+import HeroBookCallSection from "@/components/website-development/HeroBookCallSection";
+import WebsiteDevelopmentAboutSection from "@/components/website-development/WebsiteDevelopmentAboutSection";
 
 export const metadata: Metadata = {
   title: "Website Development - Krisan Putih",
@@ -197,92 +200,20 @@ export default function WebsiteDevelopmentPage() {
   return (
     <div className="pt-24">
       {/* Hero */}
-      <section className="px-6 py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
-            KRISAN PUTIH
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-6">
-            Experienced Asian-based Web Development Partner for Your Business
-          </h2>
-          <p className="text-lg text-text mb-10">
-            Build a credible, high-performing website without paying large agency fees.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://wa.me/6287833060699"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Book a Free Call
-            </a>
-            <Link
-              href="/portfolio"
-              className="border-2 border-secondary/20 text-secondary px-8 py-4 rounded-full font-semibold hover:border-primary hover:text-primary transition-colors"
-            >
-              View Our Work
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroBookCallSection />
 
-      {/* Trusted by clients */}
+      {/* Trusted by clients - autoplay carousel */}
       <section className="px-6 py-12 bg-white border-y border-gray-100">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center text-secondary font-semibold mb-8">
             Trusted by Client Globally
           </h2>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {trustedByLogos.map((logo, i) => (
-              <div
-                key={i}
-                className="shrink-0 w-[120px] h-12 flex items-center justify-center"
-              >
-                <OptionalImage
-                  src={logo.src}
-                  alt={logo.label}
-                  width={120}
-                  height={60}
-                  className="w-[120px] h-12 max-w-[120px]"
-                  imgClassName="w-full h-full object-contain"
-                  placeholder={
-                    <div className="w-full h-full min-w-0 bg-gray-100 rounded flex items-center justify-center text-text/50 text-xs truncate px-2">
-                      {logo.label}
-                    </div>
-                  }
-                />
-              </div>
-            ))}
-          </div>
+          <TrustedByCarousel logos={trustedByLogos} />
         </div>
       </section>
 
-      {/* About Us */}
-      <section className="px-6 py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">
-            KRISAN PUTIH
-          </h2>
-          <h3 className="text-xl font-semibold text-secondary mb-6">About Us</h3>
-          <p className="text-text leading-relaxed mb-8">
-            Krisan Putih is a Indonesia-based <strong>web development agency</strong> helping
-            businesses build professional, scalable websites with regional pricing advantage. Led
-            by <strong>Septiani Ananda</strong>, an experienced developer with over{" "}
-            <strong>7 years of experience</strong> handling local and international projects.
-          </p>
-          <div className="flex justify-center gap-12">
-            <div>
-              <p className="text-3xl font-bold text-primary">0+</p>
-              <p className="text-text text-sm mt-1">Web Project Completed</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-primary">0</p>
-              <p className="text-text text-sm mt-1">Client Satisfaction</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* About Us – 70% content left-aligned, 30% static image */}
+      <WebsiteDevelopmentAboutSection />
 
       {/* Our Work */}
       <section className="px-6 py-20 bg-white">

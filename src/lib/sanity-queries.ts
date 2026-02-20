@@ -42,6 +42,11 @@ const projectFields = `
   mainImage,
   categories,
   completedAt,
+  country,
+  framework,
+  projectResult,
+  nameOfPIC,
+  testimony,
   link
 `;
 
