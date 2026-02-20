@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import HeroVideoBackground from "./HeroVideoBackground";
 
 const DURATION_MS = 2000;
 const PROJECTS_TARGET = 120;
@@ -58,8 +59,9 @@ export default function HeroSection() {
   const rating = useCountUp(RATING_TARGET, 1, isInView);
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-16 px-6 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
+      <HeroVideoBackground />
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +74,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-sm"
         >
           KRISAN PUTIH
         </motion.h1>
@@ -80,7 +82,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl md:text-2xl text-text mb-2"
+          className="text-xl md:text-2xl text-gray-200 mb-2"
         >
           Professional Web Development for Your Business
         </motion.p>
@@ -88,7 +90,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-text/80 mb-12 max-w-2xl mx-auto"
+          className="text-gray-400 mb-12 max-w-2xl mx-auto"
         >
           We help businesses build scalable, high-performance websites, without the cost of large agencies.
         </motion.p>
@@ -102,13 +104,13 @@ export default function HeroSection() {
             href="https://wa.me/6287833060699"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+            className="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/30"
           >
             Get Started
           </a>
           <Link
             href="/#services"
-            className="text-secondary font-medium px-8 py-4 rounded-full border-2 border-secondary/20 hover:border-primary hover:text-primary transition-all"
+            className="text-white font-medium px-8 py-4 rounded-full border-2 border-white/30 hover:border-primary hover:bg-white/5 transition-all"
           >
             Our Services
           </Link>
@@ -122,11 +124,11 @@ export default function HeroSection() {
         >
           <div className="text-center">
             <p className="text-3xl font-bold text-primary">{projects}+</p>
-            <p className="text-text text-sm mt-1">Projects Completed</p>
+            <p className="text-gray-400 text-sm mt-1">Projects Completed</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-secondary">{rating}</p>
-            <p className="text-text text-sm mt-1">Client Satisfaction Rating</p>
+            <p className="text-3xl font-bold text-white">{rating}</p>
+            <p className="text-gray-400 text-sm mt-1">Client Satisfaction Rating</p>
           </div>
         </motion.div>
       </div>
