@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
@@ -8,21 +9,25 @@ const services = [
     title: "Design & Creative",
     description:
       "Memproduksi gambar atau video yang komunikatif dan efektif untuk mendukung pemasaran digital.",
+    icon: "/icons/what-we-do/design.svg",
   },
   {
     title: "Advertising",
     description:
       "Mengelola kampanye dengan optimasi tools analitik untuk hasilkan performa terbaik.",
+    icon: "/icons/what-we-do/advertising.svg",
   },
   {
     title: "Development",
     description:
       "Membangun platform digital untuk media pemasaran dan penjualan.",
+    icon: "/icons/what-we-do/development.svg",
   },
   {
     title: "Strategy & Management",
     description:
       "Pengelolaan informasi dan sumber daya digital untuk strategi yang lebih kompetitif.",
+    icon: "/icons/what-we-do/strategy.svg",
   },
 ];
 
@@ -38,6 +43,27 @@ const item = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 };
+
+function ServiceIcon({
+  src,
+  fallbackLabel,
+}: {
+  src: string;
+  fallbackLabel: number;
+}) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return <span className="font-bold text-lg">{fallbackLabel}</span>;
+  }
+  return (
+    <img
+      src={src}
+      alt=""
+      className="w-7 h-7 object-contain"
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export default function ServicesSection() {
   return (
@@ -72,8 +98,8 @@ export default function ServicesSection() {
               variants={item}
               className="group p-6 rounded-2xl border border-gray-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-lg mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                {i + 1}
+              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors overflow-hidden">
+                <ServiceIcon src={service.icon} fallbackLabel={i + 1} />
               </div>
               <h3 className="text-lg font-semibold text-secondary mb-2 group-hover:text-primary transition-colors">
                 {service.title}
