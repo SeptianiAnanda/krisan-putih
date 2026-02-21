@@ -95,11 +95,57 @@ If images don’t show, open DevTools (F12) → Network tab, refresh, and check 
 
 ---
 
+## 5. Testimonials – client profile photos
+
+**Folder:** `public/website-development/testimonials/`
+
+**File names:** Use lowercase, one word or hyphenated (e.g. first name + last initial, or full name with hyphens). The site will show these as circular avatars next to each testimonial. If no image is set or the file is missing, the **first letter of the client’s name** is shown instead.
+
+| File name (example)   | Testimonial          |
+|------------------------|----------------------|
+| moses-mehraban.jpg     | Moses Mehraban       |
+| devyn-lado.jpg         | Devyn Lado           |
+| jony.jpg               | Jony                 |
+| eng-set.jpg            | Eng Set              |
+
+**Supported formats:** `.jpg`, `.jpeg`, `.png`, `.webp` (the page tries several extensions).
+
+**How to connect an image to a testimonial:** In `src/app/website-development/page.tsx`, find the `testimonials` array and add an `image` property to the right object, for example:
+
+```js
+{
+  name: "Moses Mehraban",
+  location: "USA",
+  company: "Brownboot Coffee",
+  quote: "…",
+  image: "/website-development/testimonials/moses-mehraban.jpg",
+}
+```
+
+**Suggested size:** about 96×96 px or larger (displayed at 48×48 px, so square photos work best).
+
+---
+
+## 6. Hero section – background video
+
+**Folder:** `public/website-development/video/`
+
+**File names:** The hero uses the same names as the homepage hero. Use either or both:
+
+| File name       | Purpose                          |
+|-----------------|-----------------------------------|
+| hero-bg.webm    | Preferred (smaller, good quality)  |
+| hero-bg.mp4     | Fallback (Safari / older browsers)|
+
+**Tips for fast loading:** Short loop (10–20 s), 720p or 1080p, ~1–2 Mbps bitrate, no audio (hero is muted). If no video is present, a dark gradient is shown as fallback.
+
+---
+
 ## Quick steps to upload
 
 1. Open the project folder: `D:\Cursor\Web Krisan Putih\`
 2. Go to: **public** → **website-development**
-3. Create subfolders if needed: **clients**, **work**, **icons**
+3. Create subfolders if needed: **clients**, **work**, **icons**, **testimonials**, **video**
 4. Copy your image files into the right folder and use the **exact file names** from the tables above.
 5. Save. When you run the site (or redeploy), the new images will appear on the page.
 

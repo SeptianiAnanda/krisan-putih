@@ -4,10 +4,10 @@
 
 :root {
   --primary: #ae126c;
-  --secondary: #242424;
-  --text: #555555;
-  --background: #ffffff;
-  --foreground: #242424;
+  --secondary: #ffffff;
+  --text: #ffffff;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 html {
@@ -32,6 +32,23 @@ body {
   }
 }
 
+/* Force text color to white in dark mode (overrides cached rgb(85,85,85)) */
+.text-text {
+  color: #ffffff !important;
+}
+.text-text\/40 { color: #ffffff !important; opacity: 0.4; }
+.text-text\/60 { color: #ffffff !important; opacity: 0.6; }
+.text-text\/70 { color: #ffffff !important; opacity: 0.7; }
+.text-text\/80 { color: #ffffff !important; opacity: 0.8; }
+.text-text\/90 { color: #ffffff !important; opacity: 0.9; }
+
+/* Force these to white in dark mode */
+.text-secondary,
+.text-2xl,
+.text-4xl {
+  color: #ffffff !important;
+}
+
 @keyframes trusted-by-scroll {
   0% {
     transform: translateX(0);
@@ -47,6 +64,16 @@ body {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Testimonials: vertical carousel (scroll up, infinite) */
+@keyframes testimonials-scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
   }
 }
 

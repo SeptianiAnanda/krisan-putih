@@ -19,7 +19,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white">
+    <footer className="bg-black text-white border-t border-gray-800">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div>

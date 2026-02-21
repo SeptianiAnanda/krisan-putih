@@ -26,7 +26,7 @@ interface OurWorkSectionProps {
 
 export default function OurWorkSection({ projects }: OurWorkSectionProps) {
   return (
-    <SectionWrapper className="py-24 px-6 bg-gray-50">
+    <SectionWrapper className="py-24 px-6 bg-gray-950">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export default function OurWorkSection({ projects }: OurWorkSectionProps) {
                 transition={{ delay: i * 0.1 }}
               >
                 <Link href={`/portfolio/${project.slug.current}`} className="group block">
-                  <div className="aspect-video bg-gray-100 rounded-2xl mb-4 overflow-hidden group-hover:opacity-90 transition-opacity">
+                  <div className="aspect-video bg-gray-800 rounded-2xl mb-4 overflow-hidden group-hover:opacity-90 transition-opacity">
                     {project.mainImage ? (
                       <Image
                         src={urlFor(project.mainImage).width(600).height(400).url()}
@@ -71,7 +71,7 @@ export default function OurWorkSection({ projects }: OurWorkSectionProps) {
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-text/40 text-4xl font-bold">
+                        <span className="text-gray-500 text-4xl font-bold">
                           {project.title[0]}
                         </span>
                       </div>

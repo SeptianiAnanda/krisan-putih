@@ -41,7 +41,7 @@ const item = {
 
 export default function ServicesSection() {
   return (
-    <SectionWrapper id="services" className="py-24 px-6 bg-white">
+    <SectionWrapper id="services" className="py-24 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ export default function ServicesSection() {
             <motion.div
               key={service.title}
               variants={item}
-              className="group p-6 rounded-2xl border border-gray-100 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              className="group p-6 rounded-2xl border border-gray-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-lg mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                 {i + 1}

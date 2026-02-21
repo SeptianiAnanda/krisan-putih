@@ -80,13 +80,13 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} aria-hidden />
-      <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-xl">
-        <div className="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex justify-between items-center">
-          <h2 className="text-xl font-bold text-secondary">{packageName} Quotation</h2>
+      <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-gray-900 rounded-2xl shadow-xl border border-gray-800">
+        <div className="sticky top-0 bg-gray-900 border-b border-gray-800 px-6 py-4 flex justify-between items-center">
+          <h2 className="text-xl font-bold text-white">{packageName} Quotation</h2>
           <button
             type="button"
             onClick={onClose}
-            className="p-2 text-text hover:text-secondary rounded-full hover:bg-gray-100"
+            className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-gray-800"
             aria-label="Close"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                     required
                     value={form.fullname}
                     onChange={(e) => setForm((p) => ({ ...p, fullname: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
                 </div>
                 <div>
@@ -130,7 +130,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                     required
                     value={form.email}
                     onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
                 </div>
                 <div>
@@ -139,7 +139,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                     type="text"
                     value={form.company}
                     onChange={(e) => setForm((p) => ({ ...p, company: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
                 </div>
                 <div>
@@ -153,7 +153,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                           type="checkbox"
                           checked={form.goal.includes(option)}
                           onChange={(e) => handleGoalChange(option, e.target.checked)}
-                          className="rounded border-gray-300 text-primary focus:ring-primary"
+                          className="rounded border-gray-600 bg-gray-800 text-primary focus:ring-primary"
                         />
                         {option}
                       </label>
@@ -165,7 +165,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                       placeholder="Please specify"
                       value={form.goalOther}
                       onChange={(e) => setForm((p) => ({ ...p, goalOther: e.target.value }))}
-                      className="mt-2 w-full px-4 py-2 border border-gray-200 rounded-lg text-sm"
+                      className="mt-2 w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg text-sm"
                     />
                   )}
                 </div>
@@ -177,7 +177,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                     type="text"
                     value={form.referenceWebsites}
                     onChange={(e) => setForm((p) => ({ ...p, referenceWebsites: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
                 </div>
                 <div>
@@ -188,7 +188,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                     type="text"
                     value={form.budgetRange}
                     onChange={(e) => setForm((p) => ({ ...p, budgetRange: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
                 </div>
                 <div>
@@ -199,7 +199,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                     type="text"
                     value={form.mustHaveFeatures}
                     onChange={(e) => setForm((p) => ({ ...p, mustHaveFeatures: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
                 </div>
                 <div>
@@ -208,7 +208,7 @@ export default function QuoteModal({ packageName, open, onClose }: QuoteModalPro
                     rows={4}
                     value={form.additionalNotes}
                     onChange={(e) => setForm((p) => ({ ...p, additionalNotes: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
+                    className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
                   />
                 </div>
                 {error && <p className="text-red-600 text-sm">{error}</p>}

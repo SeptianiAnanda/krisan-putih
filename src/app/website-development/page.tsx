@@ -6,6 +6,7 @@ import InvestmentPackagesSection from "@/components/website-development/Investme
 import TrustedByCarousel from "@/components/website-development/TrustedByCarousel";
 import HeroBookCallSection from "@/components/website-development/HeroBookCallSection";
 import WebsiteDevelopmentAboutSection from "@/components/website-development/WebsiteDevelopmentAboutSection";
+import TestimonialsSection from "@/components/website-development/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "Website Development - Krisan Putih",
@@ -41,24 +42,28 @@ const testimonials = [
     company: "Brownboot Coffee",
     quote:
       "Septiani did an excellent job. It was impressive how she handled all the custom code requirements and delivered the project successfully.",
+    image: "/website-development/testimonials/moses-mehraban.jpg",
   },
   {
     name: "Devyn Lado",
     location: "USA",
     company: "Garment Decor",
     quote: "The website looks great! I like the way it you made it, awesome!",
+    image: "/website-development/testimonials/devyn-lado.jpg",
   },
   {
     name: "Jony",
     location: "New Zealand",
     company: "AVRA Cleaning",
     quote: "Excellent work — reliable and consistently professional.",
+    image: "/website-development/testimonials/jony.png",
   },
   {
     name: "Eng Set",
     location: "Singapore",
     company: "Sigma Growth",
     quote: "Thank you Septi! The web looks good! The work results are as expected.",
+    image: "/website-development/testimonials/eng-set.png",
   },
 ];
 
@@ -203,7 +208,7 @@ export default function WebsiteDevelopmentPage() {
       <HeroBookCallSection />
 
       {/* Trusted by clients - autoplay carousel */}
-      <section className="px-6 py-12 bg-white border-y border-gray-100">
+      <section className="px-6 py-12 bg-black border-y border-gray-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center text-secondary font-semibold mb-8">
             Trusted by Client Globally
@@ -216,7 +221,7 @@ export default function WebsiteDevelopmentPage() {
       <WebsiteDevelopmentAboutSection />
 
       {/* Our Work */}
-      <section className="px-6 py-20 bg-white">
+      <section className="px-6 py-20 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4 text-center">
             Our Work
@@ -229,7 +234,7 @@ export default function WebsiteDevelopmentPage() {
               <Link
                 key={project.name}
                 href="/portfolio"
-                className="block p-6 rounded-2xl border border-gray-100 hover:border-primary/30 hover:shadow-lg transition-all group"
+                className="block p-6 rounded-2xl border border-gray-800 hover:border-primary/30 hover:shadow-lg transition-all group"
               >
                 <OptionalImage
                   src={[
@@ -241,10 +246,10 @@ export default function WebsiteDevelopmentPage() {
                   alt={project.name}
                   width={800}
                   height={450}
-                  className="aspect-video rounded-lg mb-4 overflow-hidden bg-gray-100"
+                  className="aspect-video rounded-lg mb-4 overflow-hidden bg-gray-800"
                   imgClassName=""
                   placeholder={
-                    <div className="aspect-video rounded-lg bg-gray-100 flex items-center justify-center text-text/40 text-sm text-center px-2">
+                    <div className="aspect-video rounded-lg bg-gray-800 flex items-center justify-center text-gray-500 text-sm text-center px-2">
                       {project.name}
                     </div>
                   }
@@ -267,41 +272,11 @@ export default function WebsiteDevelopmentPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="px-6 py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4 text-center">
-            TESTIMONIALS
-          </h2>
-          <h3 className="text-xl font-semibold text-secondary mb-12 text-center">
-            What They Say
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm"
-              >
-                <p className="text-text italic mb-6">&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                    {t.name.slice(0, 1)}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-secondary">{t.name}</p>
-                    <p className="text-sm text-text/80">
-                      {t.location} · {t.company}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonials: 50/50 — left: heading + See more; right: vertical carousel */}
+      <TestimonialsSection testimonials={testimonials} />
 
       {/* How It Work */}
-      <section className="px-6 py-20 bg-white">
+      <section className="px-6 py-20 bg-black">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-12 text-center">
             How It Work
@@ -321,7 +296,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* Scope of Services */}
-      <section className="px-6 py-20 bg-gray-50">
+      <section className="px-6 py-20 bg-gray-950">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-12 text-center">
             Scope of Services
@@ -330,7 +305,7 @@ export default function WebsiteDevelopmentPage() {
             {scopeOfServices.map((s) => (
               <div
                 key={s}
-                className="bg-white px-6 py-4 rounded-xl border border-gray-100 text-center font-medium text-secondary"
+                className="bg-gray-900 px-6 py-4 rounded-xl border border-gray-800 text-center font-medium text-secondary"
               >
                 {s}
               </div>
@@ -340,7 +315,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* Experienced Working with / Benefits */}
-      <section className="px-6 py-20 bg-white">
+      <section className="px-6 py-20 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-12 text-center">
             Experienced Working with
@@ -349,7 +324,7 @@ export default function WebsiteDevelopmentPage() {
             {benefits.map((b, i) => (
               <div
                 key={b.title}
-                className="p-8 rounded-2xl border border-gray-100 hover:border-primary/20 transition-colors text-center"
+                className="p-8 rounded-2xl border border-gray-800 hover:border-primary/20 transition-colors text-center"
               >
                 <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center text-primary [&_svg]:w-full [&_svg]:h-full [&_svg]:max-w-14 [&_svg]:max-h-14">
                   {i === 0 && (
@@ -382,7 +357,7 @@ export default function WebsiteDevelopmentPage() {
       <InvestmentPackagesSection packages={packages} />
 
       {/* FAQ */}
-      <section className="px-6 py-20 bg-white">
+      <section className="px-6 py-20 bg-gray-950">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-12 text-center">
             Frequently Asked Questions
@@ -391,7 +366,7 @@ export default function WebsiteDevelopmentPage() {
             {faqs.map((faq) => (
               <div
                 key={faq.q}
-                className="border-b border-gray-200 pb-6 last:border-0"
+                className="border-b border-gray-700 pb-6 last:border-0"
               >
                 <h3 className="font-semibold text-secondary mb-2">{faq.q}</h3>
                 <p className="text-text text-sm leading-relaxed">{faq.a}</p>
@@ -402,7 +377,7 @@ export default function WebsiteDevelopmentPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-20 bg-secondary text-white">
+      <section className="px-6 py-20 bg-gray-900 text-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Ready to Build a Stronger Digital Presence?

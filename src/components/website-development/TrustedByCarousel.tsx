@@ -39,7 +39,7 @@ export default function TrustedByCarousel({ logos }: { logos: LogoItem[] }) {
               className="w-full h-full"
               imgClassName="object-contain"
               placeholder={
-                <div className="w-full h-full min-h-[32px] bg-gray-100 rounded flex items-center justify-center text-text/50 text-xs truncate px-2">
+                <div className="w-full h-full min-h-[32px] bg-gray-800 rounded flex items-center justify-center text-gray-500 text-xs truncate px-2">
                   {logo.label}
                 </div>
               }

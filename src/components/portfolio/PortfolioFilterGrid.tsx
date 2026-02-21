@@ -82,7 +82,7 @@ export default function PortfolioFilterGrid({ projects }: PortfolioFilterGridPro
           aria-label="Project category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="rounded-lg border border-gray-200 bg-white pl-3 pr-[22px] py-2 text-sm text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="rounded-lg border border-gray-600 bg-gray-900 pl-3 pr-[22px] py-2 text-sm text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         >
           <option value="">All categories</option>
           {categoryOptions.map((c) => (
@@ -95,7 +95,7 @@ export default function PortfolioFilterGrid({ projects }: PortfolioFilterGridPro
           aria-label="Framework"
           value={framework}
           onChange={(e) => setFramework(e.target.value)}
-          className="rounded-lg border border-gray-200 bg-white pl-3 pr-[22px] py-2 text-sm text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="rounded-lg border border-gray-600 bg-gray-900 pl-3 pr-[22px] py-2 text-sm text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         >
           <option value="">All frameworks</option>
           {frameworkOptions.map((f) => (
@@ -108,7 +108,7 @@ export default function PortfolioFilterGrid({ projects }: PortfolioFilterGridPro
           aria-label="Country"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
-          className="rounded-lg border border-gray-200 bg-white pl-3 pr-[22px] py-2 text-sm text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="rounded-lg border border-gray-600 bg-gray-900 pl-3 pr-[22px] py-2 text-sm text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         >
           <option value="">All countries</option>
           {countryOptions.map((c) => (
@@ -121,7 +121,7 @@ export default function PortfolioFilterGrid({ projects }: PortfolioFilterGridPro
           aria-label="Year"
           value={year}
           onChange={(e) => setYear(e.target.value)}
-          className="rounded-lg border border-gray-200 bg-white pl-3 pr-[22px] py-2 text-sm text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="rounded-lg border border-gray-600 bg-gray-900 pl-3 pr-[22px] py-2 text-sm text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         >
           <option value="">All years</option>
           {yearOptions.map((y) => (
@@ -160,7 +160,7 @@ export default function PortfolioFilterGrid({ projects }: PortfolioFilterGridPro
               href={`/portfolio/${project.slug.current}`}
               className="group block"
             >
-              <article className="rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+              <article className="rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
                 <div className="aspect-[4/3] overflow-hidden">
                   {project.mainImage ? (
                     <Image
@@ -171,8 +171,8 @@ export default function PortfolioFilterGrid({ projects }: PortfolioFilterGridPro
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                      <span className="text-text/40 text-4xl font-bold">{project.title[0]}</span>
+                    <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                      <span className="text-gray-500 text-4xl font-bold">{project.title[0]}</span>
                     </div>
                   )}
                 </div>
@@ -200,7 +200,7 @@ export default function PortfolioFilterGrid({ projects }: PortfolioFilterGridPro
           ))}
         </div>
       ) : (
-        <div className="text-center py-24 bg-gray-50 rounded-2xl">
+        <div className="text-center py-24 bg-gray-900 rounded-2xl border border-gray-800">
           <p className="text-text text-lg">No projects match the selected filters.</p>
           <button
             type="button"

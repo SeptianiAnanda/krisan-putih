@@ -25,7 +25,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center shrink-0" aria-label="Krisan Putih - Home">
           <Image
@@ -33,7 +33,7 @@ export default function Header() {
             alt="Krisan Putih"
             width={320}
             height={80}
-            className="h-16 w-auto object-contain"
+            className="h-16 w-auto object-contain brightness-0 invert"
             priority
           />
         </Link>
@@ -48,7 +48,7 @@ export default function Header() {
                 onMouseLeave={() => setServicesOpen(false)}
               >
                 <button
-                  className="text-text hover:text-primary transition-colors text-sm font-medium flex items-center gap-1"
+                  className="text-white hover:text-primary transition-colors text-sm font-medium flex items-center gap-1"
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
                 >
@@ -65,12 +65,12 @@ export default function Header() {
                       exit={{ opacity: 0, y: -4 }}
                       className="absolute top-full left-0 pt-2"
                     >
-                      <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
+                      <div className="bg-gray-900 rounded-lg shadow-lg border border-gray-700 py-2 min-w-[200px]">
                         {(item.submenu ?? []).map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            className="block px-4 py-2 text-sm text-text hover:text-primary hover:bg-gray-50 transition-colors"
+                            className="block px-4 py-2 text-sm text-white hover:text-primary hover:bg-gray-800 transition-colors"
                           >
                             {sub.label}
                           </Link>
@@ -84,7 +84,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-text hover:text-primary transition-colors text-sm font-medium"
+                className="text-white hover:text-primary transition-colors text-sm font-medium"
               >
                 {item.label}
               </Link>
@@ -102,7 +102,7 @@ export default function Header() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-secondary"
+          className="md:hidden p-2 text-white"
           aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,19 +121,19 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100"
+            className="md:hidden bg-gray-900 border-t border-gray-800"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((item) =>
                 "submenu" in item ? (
                   <div key={item.label} className="flex flex-col gap-2">
-                    <span className="text-text font-medium text-sm">{item.label}</span>
+                    <span className="text-white font-medium text-sm">{item.label}</span>
                     {(item.submenu ?? []).map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
                         onClick={() => setMobileOpen(false)}
-                        className="text-text hover:text-primary transition-colors pl-4 text-sm"
+                        className="text-gray-300 hover:text-primary transition-colors pl-4 text-sm"
                       >
                         {sub.label}
                       </Link>
@@ -144,7 +144,7 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-text hover:text-primary transition-colors"
+                    className="text-white hover:text-primary transition-colors"
                   >
                     {item.label}
                   </Link>

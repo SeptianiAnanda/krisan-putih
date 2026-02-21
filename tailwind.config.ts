@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#AE126C",
-        secondary: "#242424",
-        text: "#555555",
+        secondary: "#ffffff",
+        text: "#ffffff",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],

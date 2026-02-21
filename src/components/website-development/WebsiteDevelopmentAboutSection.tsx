@@ -66,7 +66,7 @@ export default function WebsiteDevelopmentAboutSection() {
   const satisfaction = useCountUp(SATISFACTION_TARGET, 1, isInView);
 
   return (
-    <section className="px-6 py-20 bg-gray-50">
+    <section className="px-6 py-20 bg-black">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-10 gap-10 md:gap-12 items-center">
           {/* Left column – 70% – left aligned */}

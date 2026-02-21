@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </p>
             )}
           </div>
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800">
             {project.mainImage && (
               <ImageLightbox
                 imageUrl={urlFor(project.mainImage).width(1200).height(900).url()}
@@ -111,7 +111,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <h2 className="text-secondary font-bold mb-6" style={{ fontSize: "clamp(1.5rem, 2vw, 2.1875rem)" }}>
                   About Project
                 </h2>
-                <div className="prose prose-lg max-w-none text-text">
+                <div className="prose prose-lg prose-invert max-w-none text-text">
                   <PortableText value={project.body} components={components} />
                 </div>
               </>
@@ -147,7 +147,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         {/* Testimony – special container */}
         {(project.testimony || project.nameOfPIC) && (
-          <section className="mb-20 rounded-2xl bg-gray-100 px-8 py-10 md:px-12 md:py-12">
+          <section className="mb-20 rounded-2xl bg-gray-900 border border-gray-800 px-8 py-10 md:px-12 md:py-12">
             {project.testimony && (
               <blockquote className="text-lg md:text-xl text-text/90 italic mb-4 border-l-4 border-primary pl-6">
                 {project.testimony}

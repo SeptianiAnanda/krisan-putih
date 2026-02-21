@@ -32,7 +32,7 @@ export default function CTASection() {
   };
 
   return (
-    <SectionWrapper className="py-24 px-6 bg-secondary">
+    <SectionWrapper className="py-24 px-6 bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

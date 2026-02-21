@@ -51,13 +51,13 @@ export default function BookCallModal({ open, onClose }: BookCallModalProps) {
       aria-labelledby="book-call-modal-title"
     >
       <div
-        className="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 relative"
+        className="bg-gray-900 rounded-2xl shadow-xl max-w-md w-full p-8 relative border border-gray-800"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={handleClose}
-          className="absolute top-4 right-4 text-text/60 hover:text-secondary p-1"
+          className="absolute top-4 right-4 text-gray-400 hover:text-white p-1"
           aria-label="Close"
         >
           <span className="text-2xl leading-none">&times;</span>
@@ -76,7 +76,7 @@ export default function BookCallModal({ open, onClose }: BookCallModalProps) {
               value={form.fullname}
               onChange={(e) => setForm((p) => ({ ...p, fullname: e.target.value }))}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-secondary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
             <input
               type="text"
@@ -84,7 +84,7 @@ export default function BookCallModal({ open, onClose }: BookCallModalProps) {
               value={form.emailOrPhone}
               onChange={(e) => setForm((p) => ({ ...p, emailOrPhone: e.target.value }))}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-secondary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
             {error && (
               <p className="text-red-600 text-sm" role="alert">

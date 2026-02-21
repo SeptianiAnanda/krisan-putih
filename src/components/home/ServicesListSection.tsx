@@ -14,7 +14,7 @@ const services = [
 
 export default function ServicesListSection() {
   return (
-    <SectionWrapper className="py-24 px-6 bg-white">
+    <SectionWrapper className="py-24 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export default function ServicesListSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="flex items-center gap-4 p-6 rounded-2xl bg-gray-50 hover:bg-primary/5 border border-transparent hover:border-primary/20 transition-all group"
+              className="flex items-center gap-4 p-6 rounded-2xl bg-gray-900 hover:bg-primary/10 border border-gray-800 hover:border-primary/20 transition-all group"
             >
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                 <span className="text-primary font-bold group-hover:text-white transition-colors">{i + 1}</span>

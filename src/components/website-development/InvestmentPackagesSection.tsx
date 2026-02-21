@@ -19,7 +19,7 @@ export default function InvestmentPackagesSection({ packages }: { packages: Pkg[
 
   return (
     <>
-      <section className="px-6 py-20 bg-gray-50">
+      <section className="px-6 py-20 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4 text-center">
             Investment & Packages
@@ -31,8 +31,8 @@ export default function InvestmentPackagesSection({ packages }: { packages: Pkg[
             {packages.map((pkg) => (
               <div
                 key={pkg.name}
-                className={`relative bg-white rounded-2xl border-2 p-8 ${
-                  pkg.popular ? "border-primary shadow-lg" : "border-gray-100"
+                className={`relative bg-gray-900 rounded-2xl border-2 p-8 ${
+                  pkg.popular ? "border-primary shadow-lg" : "border-gray-800"
                 }`}
               >
                 {pkg.badge && (

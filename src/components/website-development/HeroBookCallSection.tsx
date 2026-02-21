@@ -3,14 +3,16 @@
 import { useState } from "react";
 import Link from "next/link";
 import BookCallModal from "./BookCallModal";
+import HeroVideoBackground from "./HeroVideoBackground";
 
 export default function HeroBookCallSection() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
-      <section className="px-6 py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white text-center">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
+        <HeroVideoBackground />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
             KRISAN PUTIH
           </h1>
@@ -24,13 +26,13 @@ export default function HeroBookCallSection() {
             <button
               type="button"
               onClick={() => setModalOpen(true)}
-              className="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary/90 transition-colors"
+              className="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30"
             >
               Book a Free Call
             </button>
             <Link
               href="/portfolio"
-              className="border-2 border-secondary/20 text-secondary px-8 py-4 rounded-full font-semibold hover:border-primary hover:text-primary transition-colors"
+              className="border-2 border-secondary/30 text-secondary px-8 py-4 rounded-full font-semibold hover:border-primary hover:text-primary transition-colors"
             >
               View Our Work
             </Link>

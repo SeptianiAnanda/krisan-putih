@@ -23,7 +23,7 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <SectionWrapper id="about" className="py-24 px-6 bg-gray-50">
+    <SectionWrapper id="about" className="py-24 px-6 bg-gray-950">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -64,7 +64,7 @@ export default function AboutSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-primary/5 rounded-3xl p-12 h-full min-h-[400px] flex flex-col justify-center"
+            className="bg-gray-900 rounded-3xl p-12 h-full min-h-[400px] flex flex-col justify-center border border-gray-800"
           >
             <p className="text-2xl font-semibold text-secondary mb-4">
               &ldquo;We combine creative thinking with technical expertise to deliver websites that are not only visually appealing, but also built to perform.&rdquo;

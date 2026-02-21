@@ -38,7 +38,7 @@ export default function ContactPage() {
             </a>
             <a
               href="mailto:Contact@krisanputih.com"
-              className="flex-1 p-8 rounded-2xl bg-secondary text-white text-center hover:bg-secondary/90 transition-colors group"
+              className="flex-1 p-8 rounded-2xl bg-gray-800 text-white text-center hover:bg-gray-700 transition-colors group border border-gray-700"
             >
               <h3 className="font-semibold text-lg mb-2">Email</h3>
               <p className="text-gray-300 text-sm">Contact@krisanputih.com</p>
@@ -46,13 +46,13 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="p-8 rounded-2xl bg-gray-50 border border-gray-100">
+          <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800">
             <h3 className="font-semibold text-secondary mb-4">Location</h3>
             <p className="text-text">Central Java, Indonesia</p>
             <p className="text-text/70 text-sm mt-2">We work with clients globally</p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-gray-50 border border-gray-100">
+          <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800">
             <h3 className="font-semibold text-secondary mb-4">Hire via Platform</h3>
             <p className="text-text mb-4">You may also hire us securely via these platforms:</p>
             <div className="flex flex-wrap gap-4">

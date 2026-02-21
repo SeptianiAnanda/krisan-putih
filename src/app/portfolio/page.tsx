@@ -33,7 +33,7 @@ export default async function PortfolioPage() {
         {projects.length > 0 ? (
           <PortfolioFilterGrid projects={projects} />
         ) : (
-          <div className="text-center py-24 bg-gray-50 rounded-2xl">
+          <div className="text-center py-24 bg-gray-900 rounded-2xl border border-gray-800">
             <p className="text-text text-lg">No projects yet.</p>
             <p className="text-text/70 mt-2">We&apos;re adding our best work soon!</p>
           </div>

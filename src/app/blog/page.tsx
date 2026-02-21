@@ -44,7 +44,7 @@ export default async function BlogPage() {
             {posts.map((post) => (
               <article key={post._id} className="group">
                 <Link href={`/blog/${post.slug.current}`} className="block">
-                  <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-gray-100 mb-6">
+                  <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-gray-800 mb-6">
                     {post.mainImage ? (
                       <Image
                         src={urlFor(post.mainImage as Parameters<typeof urlFor>[0]).width(800).height(450).url()}
@@ -76,7 +76,7 @@ export default async function BlogPage() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-24 bg-gray-50 rounded-2xl">
+          <div className="text-center py-24 bg-gray-900 rounded-2xl border border-gray-800">
             <p className="text-text text-lg">No blog posts yet.</p>
             <p className="text-text/70 mt-2">Check back soon for new content!</p>
           </div>

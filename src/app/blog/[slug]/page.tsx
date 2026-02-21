@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         )}
         {post.body && (
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg prose-invert max-w-none">
             <PortableText value={post.body} components={components} />
           </div>
         )}
